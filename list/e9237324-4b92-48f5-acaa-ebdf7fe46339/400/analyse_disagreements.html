@@ -1,0 +1,20 @@
+<plaintext>Traceback (most recent call last):
+  File "/code.nfs/branches/caches/workstation-yassine_2025-05-01_09-40-16/xx/training/train.py", line 40, in run_and_save_results
+    results = func(*args)
+              ^^^^^^^^^^^
+  File "/code.nfs/branches/caches/workstation-yassine_2025-05-01_09-40-16/xx/pythonpath/xx/training/mlsimdriving/train.py", line 218, in analyse_disagreements
+    report = AnalyseDisagreements(config, logger=FileLogger('rlteststream')).run_report()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code.nfs/branches/caches/workstation-yassine_2025-05-01_09-40-16/xx/pythonpath/xx/release_tests/lib/base_report.py", line 80, in run_report
+    mw = self.make_report(data)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/code.nfs/branches/caches/workstation-yassine_2025-05-01_09-40-16/xx/pythonpath/xx/release_tests/driving/analyse_disagreements.py", line 501, in make_report
+    return make_report(data, self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code.nfs/branches/caches/workstation-yassine_2025-05-01_09-40-16/xx/pythonpath/xx/release_tests/driving/analyse_disagreements.py", line 405, in make_report
+    filtered_chunks = get_filtered_chunks(data_1, data_2, scene.filters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code.nfs/branches/caches/workstation-yassine_2025-05-01_09-40-16/xx/pythonpath/xx/release_tests/driving/analyse_disagreements.py", line 86, in get_filtered_chunks
+    dats[name+'_2'] = get_nested_key(data_2[s], data_key)[data_index]
+                                     ~~~~~~^^^
+KeyError: '5e3a19ff9d0eb905|2021-03-03--11-02-56/23'
