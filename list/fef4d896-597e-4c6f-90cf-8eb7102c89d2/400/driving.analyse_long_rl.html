@@ -1,0 +1,516 @@
+
+<style>
+  ul.json-node { list-style: none; padding: 0; margin: 0; }
+  ul.json-node.hidden { display: none; }
+  ul.json-node > li { margin-left: 15px; }
+  ul.json-node > li > label { color: rgb(12, 127, 149); padding-right: 5px; }
+  div.arrow { display: inline-block; width: 12px; font-size: .75em; transform: translate(-2px, 1px) rotateZ(90deg); transition: all 150ms ease 0s; user-select: none; color: rgb(12, 127, 149); }
+  div.arrow.hidden { transform: translate(0, -1px) rotateZ(0deg); }
+  summary::-webkit-details-marker { display: none; }
+  summary { display: flex; cursor: pointer; }
+  details>summary { align-items: center; }
+  details>summary span.collapse-icon { text-align: center; margin-left: 8px; width: 24px; height: 24px; transform-origin: center; transform: rotate(0deg); transition: all 150ms ease 0s; user-select: none; }
+  details[open] summary span.collapse-icon { transform: rotate(90deg); }
+</style>
+<h1>Model analysis report for</h1><ul class="json-node" style="margin-left:-10px;"><li>
+      <div class="arrow " style="cursor: pointer">▶</div>
+      <label>root:</label>
+      <span style="color: rgb(122, 118, 100)">{} 10 keys</span>
+      <ul class="json-node ">
+        <li>
+      <div class="arrow"></div>
+      <label>report_name:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'mlsimdriving_driving.analyse_long_rl'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>route_list:</label>
+      <span style="color: rgb(71, 131, 0)">
+        '/home/batman/xx/routes/default_test_2k'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>output_dir:</label>
+      <span style="color: rgb(255, 48, 124)">
+        null
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>save_tmp:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>read_only:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>limit:</label>
+      <span style="color: rgb(198, 96, 0)">
+        10000
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>use_virtual_webgl:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>format:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'HTML'
+      </span></li><li>
+      <div class="arrow hidden" style="cursor: pointer">▶</div>
+      <label>miniray:</label>
+      <span style="color: rgb(122, 118, 100)">{} 8 keys</span>
+      <ul class="json-node hidden">
+        <li>
+      <div class="arrow"></div>
+      <label>priority:</label>
+      <span style="color: rgb(198, 96, 0)">
+        10
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>job_name:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'mlsimdriving_driving.analyse_long_rl'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>queue_name:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'remote2'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>submit_host:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'redis.comma.internal'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>result_host:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'data-ram.comma.internal'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>no_unique_id:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>codedir:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'caches/workstation-yassine_2025-07-06_10-53-22'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>force_local:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li>
+      </ul></li><li>
+      <div class="arrow hidden" style="cursor: pointer">▶</div>
+      <label>rollout:</label>
+      <span style="color: rgb(122, 118, 100)">{} 10 keys</span>
+      <ul class="json-node hidden">
+        <li>
+      <div class="arrow"></div>
+      <label>type:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'TinySimRL'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>nowindow:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>debug:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>debug_render:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>save_observation_keys:</label>
+      <span style="color: rgb(71, 131, 0)">
+        []
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>output_dir:</label>
+      <span style="color: rgb(255, 48, 124)">
+        null
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>rerun:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow hidden" style="cursor: pointer">▶</div>
+      <label>env:</label>
+      <span style="color: rgb(122, 118, 100)">{} 32 keys</span>
+      <ul class="json-node hidden">
+        <li>
+      <div class="arrow"></div>
+      <label>debug_window_size:</label>
+      <span style="color: rgb(71, 131, 0)">
+        [512, 512]
+      </span></li><li>
+      <div class="arrow hidden" style="cursor: pointer">▶</div>
+      <label>ep:</label>
+      <span style="color: rgb(122, 118, 100)">{} 7 keys</span>
+      <ul class="json-node hidden">
+        <li>
+      <div class="arrow"></div>
+      <label>segment:</label>
+      <span style="color: rgb(71, 131, 0)">
+        ''
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>augment_desire:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>depth_type:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'EASYDEPTH'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>calibration_source:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'LOG'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>pipeline_dir:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'http://data-ssd.comma.life/runner/training_2024_06'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>feature_dir:</label>
+      <span style="color: rgb(255, 48, 124)">
+        null
+      </span></li><li>
+      <div class="arrow hidden" style="cursor: pointer">▶</div>
+      <label>input_paths:</label>
+      <span style="color: rgb(122, 118, 100)">{} 0 keys</span>
+      <ul class="json-node hidden">
+        
+      </ul></li>
+      </ul></li><li>
+      <div class="arrow"></div>
+      <label>start:</label>
+      <span style="color: rgb(255, 48, 124)">
+        null
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>end:</label>
+      <span style="color: rgb(255, 48, 124)">
+        null
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>env:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'xx.arena.envs.tinysim_env.TinySimEnv'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>get_imgs:</label>
+      <span style="color: rgb(198, 96, 0)">
+        true
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>allow_resets:</label>
+      <span style="color: rgb(198, 96, 0)">
+        true
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>zero_desire:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>fps:</label>
+      <span style="color: rgb(198, 96, 0)">
+        20
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>allow_lat:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>allow_long:</label>
+      <span style="color: rgb(198, 96, 0)">
+        true
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>min_hist:</label>
+      <span style="color: rgb(198, 96, 0)">
+        40
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>compressor_model:</label>
+      <span style="color: rgb(255, 48, 124)">
+        null
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>compressor_decoder_model:</label>
+      <span style="color: rgb(255, 48, 124)">
+        null
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>compressor_mode:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'NONE'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>quantized_compressor_latents:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>yolo_model:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>lpips_model:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>sharpness_metric:</label>
+      <span style="color: rgb(198, 96, 0)">
+        true
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>future_observation_range_seconds:</label>
+      <span style="color: rgb(255, 48, 124)">
+        null
+      </span></li><li>
+      <div class="arrow hidden" style="cursor: pointer">▶</div>
+      <label>physics:</label>
+      <span style="color: rgb(122, 118, 100)">{} 4 keys</span>
+      <ul class="json-node hidden">
+        <li>
+      <div class="arrow"></div>
+      <label>type:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'BICYCLE'
+      </span></li><li>
+      <div class="arrow hidden" style="cursor: pointer">▶</div>
+      <label>bicycle_model_config:</label>
+      <span style="color: rgb(122, 118, 100)">{} 1 keys</span>
+      <ul class="json-node hidden">
+        <li>
+      <div class="arrow"></div>
+      <label>vehicle_platform:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'HONDA_CIVIC'
+      </span></li>
+      </ul></li><li>
+      <div class="arrow hidden" style="cursor: pointer">▶</div>
+      <label>classic_model_config:</label>
+      <span style="color: rgb(122, 118, 100)">{} 1 keys</span>
+      <ul class="json-node hidden">
+        <li>
+      <div class="arrow"></div>
+      <label>platform:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'COROLLA'
+      </span></li>
+      </ul></li><li>
+      <div class="arrow hidden" style="cursor: pointer">▶</div>
+      <label>ml_model_config:</label>
+      <span style="color: rgb(122, 118, 100)">{} 6 keys</span>
+      <ul class="json-node hidden">
+        <li>
+      <div class="arrow"></div>
+      <label>platform:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'COROLLA'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>eid:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'd3e5ef06-14ec-4e35-b708-d8db73d29f1e/51'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>y_range:</label>
+      <span style="color: rgb(71, 131, 0)">
+        [-5.0, 5.0]
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>vocab_size:</label>
+      <span style="color: rgb(198, 96, 0)">
+        2048
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>temperature:</label>
+      <span style="color: rgb(71, 131, 0)">
+        0.5
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>use_gt_features:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li>
+      </ul></li>
+      </ul></li><li>
+      <div class="arrow"></div>
+      <label>max_x_error:</label>
+      <span style="color: rgb(71, 131, 0)">
+        4.0
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>max_y_error:</label>
+      <span style="color: rgb(71, 131, 0)">
+        3.0
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>max_yaw_error:</label>
+      <span style="color: rgb(71, 131, 0)">
+        0.2
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>reset_every:</label>
+      <span style="color: rgb(255, 48, 124)">
+        null
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>noise_model:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'NONE'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>photo_noise_model:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'NONE'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>augment_mode:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'DEPTH'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>inpaint_mode:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'NONE'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>avoid_hood:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>cache_granularity:</label>
+      <span style="color: rgb(198, 96, 0)">
+        true
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>worldmodel:</label>
+      <span style="color: rgb(255, 48, 124)">
+        null
+      </span></li>
+      </ul></li><li>
+      <div class="arrow hidden" style="cursor: pointer">▶</div>
+      <label>agent:</label>
+      <span style="color: rgb(122, 118, 100)">{} 12 keys</span>
+      <ul class="json-node hidden">
+        <li>
+      <div class="arrow"></div>
+      <label>supercombo:</label>
+      <span style="color: rgb(71, 131, 0)">
+        'fef4d896-597e-4c6f-90cf-8eb7102c89d2/400'
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>restrict_outputs:</label>
+      <span style="color: rgb(255, 48, 124)">
+        null
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>exclude_outputs:</label>
+      <span style="color: rgb(71, 131, 0)">
+        ['imgs']
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>calibrate_speed:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>use_allow_throttle:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>use_prev_desired_curv:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>model_trained_fps:</label>
+      <span style="color: rgb(198, 96, 0)">
+        5
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>use_worldmodel_as_agent:</label>
+      <span style="color: rgb(198, 96, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>use_raw_plan_lat:</label>
+      <span style="color: rgb(198, 96, 0)">
+        true
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>use_raw_plan_long:</label>
+      <span style="color: rgb(198, 96, 0)">
+        true
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>desired_curv_smooth_seconds:</label>
+      <span style="color: rgb(71, 131, 0)">
+        false
+      </span></li><li>
+      <div class="arrow"></div>
+      <label>desired_accel_smooth_seconds:</label>
+      <span style="color: rgb(71, 131, 0)">
+        false
+      </span></li>
+      </ul></li><li>
+      <div class="arrow hidden" style="cursor: pointer">▶</div>
+      <label>shadow_agent:</label>
+      <span style="color: rgb(122, 118, 100)">{} 0 keys</span>
+      <ul class="json-node hidden">
+        
+      </ul></li>
+      </ul></li>
+      </ul></li></ul><h2>Plan analysis</h2><h3>All segments (whole segments)</h3><p>1644 segments || 1424.7841666666668 minutes </p><h4>Metrics</h4><p>1523/1644 aka 92.63990267639903% </p><p>better: 0/1644 aka 0.0% </p><p>best (0.5m): 0/1644 aka 0.0% </p><p>global mae x: 1.139 </p><p>global mae y: 0.064 </p><p>total # resets: 7788.000 </p><p>reset per minute : 5.466 </p><p>Mean model 0 path x errs: 0.000 m </p><p>Mean abs long acceleration: 0.377 m/(ss) </p><p>Mean abs long acceleration GT: 0.371 m/(ss) </p><p>Mean abs long jerk: 1.488 m/(sss) </p><p>Mean abs long jerk GT: 0.548 m/(sss) </p><h3>Easy straight (whole segments)</h3><p>651 segments || 552.2491666666666 minutes </p><h4>Metrics</h4><p>640/651 aka 98.31029185867895% </p><p>better: 0/651 aka 0.0% </p><p>best (0.5m): 0/651 aka 0.0% </p><p>global mae x: 1.173 </p><p>global mae y: 0.023 </p><p>total # resets: 2781.000 </p><p>reset per minute : 5.036 </p><p>Mean model 0 path x errs: 0.000 m </p><p>Mean abs long acceleration: 0.319 m/(ss) </p><p>Mean abs long acceleration GT: 0.284 m/(ss) </p><p>Mean abs long jerk: 1.265 m/(sss) </p><p>Mean abs long jerk GT: 0.446 m/(sss) </p><h3>Hard acceleration</h3><p>303 segments || 16.093333333333334 minutes </p><h4>Metrics</h4><p>296/303 aka 97.6897689768977% </p><p>better: 64/303 aka 21.122112211221122% </p><p>best (0.5m): 26/303 aka 8.58085808580858% </p><p>global mae x: 1.098 </p><p>global mae y: 0.168 </p><p>total # resets: 140.000 </p><p>reset per minute : 8.699 </p><p>Mean model 0 path x errs: 0.000 m </p><p>Mean abs long acceleration: 1.204 m/(ss) </p><p>Mean abs long acceleration GT: 2.018 m/(ss) </p><p>Mean abs long jerk: 2.305 m/(sss) </p><p>Mean abs long jerk GT: 1.395 m/(sss) </p><h3>Hard deceleration</h3><p>469 segments || 28.146666666666665 minutes </p><h4>Metrics</h4><p>461/469 aka 98.29424307036247% </p><p>better: 102/469 aka 21.748400852878465% </p><p>best (0.5m): 50/469 aka 10.660980810234541% </p><p>global mae x: 1.111 </p><p>global mae y: 0.141 </p><p>total # resets: 188.000 </p><p>reset per minute : 6.679 </p><p>Mean model 0 path x errs: 0.000 m </p><p>Mean abs long acceleration: 1.432 m/(ss) </p><p>Mean abs long acceleration GT: 2.106 m/(ss) </p><p>Mean abs long jerk: 2.307 m/(sss) </p><p>Mean abs long jerk GT: 1.332 m/(sss) </p><h3>No lead</h3><p>513 segments || 215.03166666666667 minutes </p><h4>Metrics</h4><p>486/513 aka 94.73684210526316% </p><p>better: 21/513 aka 4.093567251461988% </p><p>best (0.5m): 14/513 aka 2.729044834307992% </p><p>global mae x: 1.095 </p><p>global mae y: 0.073 </p><p>total # resets: 1358.000 </p><p>reset per minute : 6.315 </p><p>Mean model 0 path x errs: 0.000 m </p><p>Mean abs long acceleration: 0.358 m/(ss) </p><p>Mean abs long acceleration GT: 0.326 m/(ss) </p><p>Mean abs long jerk: 1.549 m/(sss) </p><p>Mean abs long jerk GT: 0.533 m/(sss) </p><h3>Come to stop</h3><p>538 segments || 108.405 minutes </p><h4>Metrics</h4><p>522/538 aka 97.02602230483271% </p><p>better: 47/538 aka 8.736059479553903% </p><p>best (0.5m): 15/538 aka 2.7881040892193307% </p><p>global mae x: 1.056 </p><p>global mae y: 0.098 </p><p>total # resets: 459.000 </p><p>reset per minute : 4.234 </p><p>Mean model 0 path x errs: 0.000 m </p><p>Mean abs long acceleration: 0.431 m/(ss) </p><p>Mean abs long acceleration GT: 0.506 m/(ss) </p><p>Mean abs long jerk: 0.948 m/(sss) </p><p>Mean abs long jerk GT: 0.494 m/(sss) </p><h3>Start from stop</h3><p>445 segments || 17.00166666666667 minutes </p><h4>Metrics</h4><p>440/445 aka 98.87640449438203% </p><p>better: 130/445 aka 29.213483146067414% </p><p>best (0.5m): 68/445 aka 15.280898876404494% </p><p>global mae x: 1.043 </p><p>global mae y: 0.192 </p><p>total # resets: 118.000 </p><p>reset per minute : 6.940 </p><p>Mean model 0 path x errs: 0.000 m </p><p>Mean abs long acceleration: 1.149 m/(ss) </p><p>Mean abs long acceleration GT: 1.395 m/(ss) </p><p>Mean abs long jerk: 1.983 m/(sss) </p><p>Mean abs long jerk GT: 0.830 m/(sss) </p><h3>Strong turns (&gt;2 m/ss)</h3><p>547 segments || 41.024166666666666 minutes </p><h4>Metrics</h4><p>523/547 aka 95.61243144424131% </p><p>better: 115/547 aka 21.02376599634369% </p><p>best (0.5m): 56/547 aka 10.23765996343693% </p><p>global mae x: 1.145 </p><p>global mae y: 0.443 </p><p>total # resets: 211.000 </p><p>reset per minute : 5.143 </p><p>Mean model 0 path x errs: 0.000 m </p><p>Mean abs long acceleration: 0.551 m/(ss) </p><p>Mean abs long acceleration GT: 0.521 m/(ss) </p><p>Mean abs long jerk: 2.249 m/(sss) </p><p>Mean abs long jerk GT: 0.799 m/(sss) </p>
+<script>
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('arrow')) {
+      var arrow = e.target
+      var dropdown = arrow.parentNode.childNodes[arrow.parentNode.childNodes.length-1]
+      if (arrow.classList.contains('hidden')) {
+        arrow.classList.remove('hidden')
+        dropdown.classList.remove('hidden')
+      } else {
+        arrow.classList.add('hidden')
+        dropdown.classList.add('hidden')
+      }
+    }
+  })
+
+  document.addEventListener('DOMContentLoaded', function() {
+    function selectTab(event) {
+      let select = event.target;
+      let uuid = select.getAttribute('data-uuid');
+      let tabId = select.options[select.selectedIndex].value;
+      for (let tab of document.querySelectorAll(`.tabs[data-uuid="${uuid}"] > .tab`)) {
+        tab.style.display = tab.getAttribute('data-tab-id') === tabId ? "block" : "none";
+      }
+    }
+    for (let tabSelector of document.querySelectorAll(".tab-selector")) {
+      tabSelector.addEventListener("change", selectTab);
+    }
+  })
+</script>
