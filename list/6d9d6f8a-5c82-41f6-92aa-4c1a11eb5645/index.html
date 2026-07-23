@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>reporterv2</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+  <link rel="stylesheet" href="static/uPlot.min.css">
+  <script src="static/uPlot.iife.min.js"></script>
+  <script src="static/d3-format.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #2a3f5f; overflow-x: hidden; }
+    #header { padding: 12px 20px; background: #f8f9fa; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid #e1e5ea; }
+    #header h1 { font-size: 18px; font-weight: 600; color: #2a3f5f; }
+    #meta-panel input.rename { padding: 4px 8px; font-size: 16px; font-weight: 600; color: #2a3f5f; background: #fff; border: 1px solid #c8d4e3; border-radius: 4px; width: 400px; }
+    #meta-panel input.rename:focus { outline: none; border-color: #636efa; }
+    #header a { color: #636efa; text-decoration: none; cursor: pointer; font-size: 14px; }
+    #content { padding: 1rem 1.25rem; }
+    #table-view { height: calc(100vh - 100px); width: 100%; }
+    .ag-theme-alpine a { color: #636efa; text-decoration: none; }
+    .ag-theme-alpine a:hover { text-decoration: underline; }
+    .ag-theme-alpine .ag-row-even { background-color: #ddddddee; }
+    .ag-theme-alpine .ag-row-odd { background-color: transparent; }
+    .run-group-toggle { margin-left: 6px; padding: 0 3px; border: 0; background: transparent; color: #636efa; cursor: pointer; font: inherit; font-weight: 600; }
+    .run-group-toggle:hover { text-decoration: underline; }
+    #experiment-view { display: none; }
+    #tab-bar { display: flex; flex-wrap: wrap; gap: 0; border-bottom: 2px solid #e1e5ea; margin-bottom: 12px; }
+    .tab { padding: 8px 16px; cursor: pointer; font-size: 14px; color: #7f8fa6; text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -2px; }
+    .tab:hover { color: #2a3f5f; }
+    .tab.active { color: #636efa; border-bottom-color: #636efa; }
+    #charts { display: flex; flex-direction: column; gap: 0; }
+    .super-group { width: 100%; margin-bottom: 12px; }
+    .super-group-header { display: flex; align-items: center; gap: 6px; padding: 5px 10px; background: #f0f2f8; border: 1px solid #d1d5f0; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; color: #2a3f5f; user-select: none; margin-bottom: 8px; }
+    .super-group-header:hover { background: #e4e7f7; }
+    .super-group-toggle { font-size: 10px; color: #7f8fa6; width: 12px; }
+    .super-group-body { display: flex; flex-wrap: wrap; gap: 12px; }
+    .chart-box { background: #fff; border-radius: 4px; padding: 8px; border: 1px solid #e1e5ea; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    .chart-box h3 { font-size: 13px; color: #2a3f5f; margin-bottom: 4px; padding-left: 4px; }
+    .u-select { background: rgba(99, 110, 250, 0.15); border: 1px solid rgba(99, 110, 250, 0.4); }
+    #meta-panel { background: #f8f9fa; border-radius: 4px; padding: 12px 16px; border: 1px solid #e1e5ea; margin-bottom: 8px; overflow: hidden; }
+    #meta-panel h2 { font-size: 16px; color: #2a3f5f; margin-bottom: 8px; }
+    #meta-panel .meta-row { display: flex; gap: 4px 16px; flex-wrap: wrap; font-size: 13px; line-height: 1.4; }
+    #meta-panel code { word-break: break-all; display: inline-block; max-width: calc(100vw - 120px); }
+    #meta-panel .meta-row span { color: #7f8fa6; }
+    .tag { background: #e8eaf6; color: #636efa; padding: 2px 8px; border-radius: 10px; font-size: 11px; margin-right: 4px; }
+    #compare-bar { display: flex; padding: 8px 20px; background: #eef0ff; border-bottom: 1px solid #d1d5f0; align-items: center; gap: 12px; font-size: 13px; }
+    #compare-bar button, #compare-bar a.bar-btn { padding: 4px 12px; background: #636efa; border: none; color: white; border-radius: 4px; cursor: pointer; font-size: 12px; text-decoration: none; display: inline-block; line-height: 1.4; }
+    #compare-bar button:hover:not(:disabled), #compare-bar a.bar-btn:not(.disabled):hover { background: #4c56d6; }
+    #compare-bar button:disabled, #compare-bar a.bar-btn.disabled { cursor: not-allowed; opacity: 0.5; pointer-events: none; }
+    #compare-bar .delete-btn, #compare-bar .delete-btn:hover { background: #fff; color: #ef553b; border: 1px solid #e1e5ea; }
+    #compare-bar .delete-btn:hover:not(:disabled) { background: #fef2f2; border-color: #ef553b; }
+    .report-controls { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .report-controls input[type="range"] { flex: 1; min-width: 0; }
+    .report-controls span { font-size: 13px; color: #2a3f5f; min-width: 80px; }
+    .report-iframe { width: 100%; border: 1px solid #e1e5ea; border-radius: 4px; background: #fff; }
+    .report-grid { display: grid; gap: 12px; }
+    .report-col-header { font-size: 12px; color: #7f8fa6; margin-bottom: 4px; }
+    .hparam-table { border-collapse: collapse; font-size: 13px; table-layout: fixed; width: 100%; }
+    .hparam-table th, .hparam-table td { padding: 4px 12px; border: 1px solid #e1e5ea; text-align: left; word-break: break-word; overflow-wrap: break-word; }
+    .hparam-table th { background: #f8f9fa; color: #7f8fa6; font-weight: 600; position: sticky; top: 0; }
+    .hparam-table td:first-child { color: #2a3f5f; font-weight: 500; }
+    .hparam-diff td { background: #fffbe6; }
+    .git-grid { display: grid; gap: 12px; }
+    .git-col { min-width: 0; }
+    .git-info { font-size: 13px; margin-bottom: 8px; }
+    .git-info span { color: #7f8fa6; }
+    .diff-view { background: #f8f9fa; border: 1px solid #e1e5ea; border-radius: 4px; padding: 12px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: 12px; line-height: 1.5; overflow-x: auto; max-height: calc(100vh - 280px); overflow-y: auto; white-space: pre; }
+    .diff-add { color: #22863a; background: #e6ffec; display: inline-block; width: 100%; }
+    .diff-del { color: #cb2431; background: #ffeef0; display: inline-block; width: 100%; }
+    .diff-hunk { color: #6f42c1; }
+    .diff-header { color: #2a3f5f; font-weight: 600; }
+    .delete-btn { padding: 3px 10px; background: #fff; border: 1px solid #e1e5ea; border-radius: 4px; color: #ef553b; cursor: pointer; font-size: 12px; }
+    .delete-btn:hover { background: #fef2f2; border-color: #ef553b; }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <h1>🚀 THE INCREDIBLE COMMA MODEL REPORTER (v2) 👨‍🚀</h1>
+    <a id="nav-back" style="display:none">back to runs</a>
+  </div>
+  <div id="compare-bar">
+    <span id="compare-count">0 selected</span>
+    <a id="compare-link" class="bar-btn">compare</a>
+    <button onclick="clearSelection()">clear</button>
+    <button class="delete-btn" onclick="deleteSelected()">delete</button>
+  </div>
+  <div id="content">
+    <div id="table-view" class="ag-theme-alpine"></div>
+    <div id="experiment-view">
+      <div id="meta-panel"></div>
+      <div id="tab-bar"></div>
+      <div id="tab-content"></div>
+    </div>
+  </div>
+  <script src="data.js"></script>
+  <script src="static/uplot-export.js"></script>
+  <script src="static/experiment.js"></script>
+  <script>
+    showExperiment(["6d9d6f8a-5c82-41f6-92aa-4c1a11eb5645"]).then(() => {
+      document.getElementById("nav-back").style.display = "none";
+      for (let input of document.querySelectorAll("input.rename")) input.readOnly = true;
+      for (let link of document.querySelectorAll("#meta-panel a")) link.removeAttribute("href");
+    });
+  </script>
+</body>
+</html>
