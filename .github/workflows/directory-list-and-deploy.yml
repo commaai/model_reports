@@ -8,8 +8,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          ref: master
 
       - name: Generate Directory Listings
         uses: jayanta525/github-pages-directory-listing@v4.0.0
@@ -22,6 +20,7 @@ jobs:
           path: 'list/'      # upload generated folder
   
   deploy:
+    if: github.ref == 'refs/heads/master'
     needs: pages-directory-listing
     permissions:
       pages: write      # to deploy to Pages
